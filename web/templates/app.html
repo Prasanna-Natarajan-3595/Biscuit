@@ -37,7 +37,12 @@ Biscuit | App
       </div>
       <div class="col-sm">
         <div class="rectangle" style='max-width:500px;height:500px;border-radius: 8px;margin-top:30px;text-align:center;'>
-            <button class='btn default' style='margin-top:60px;'>Select base file</button>
+          <div class="file-upload" style='margin-top:60px;''>
+            <input class="file-upload__input" type="file" name="myFile[]" id="myFile" multiple>
+            <button class="file-upload__button" type="button">Select Base File</button>
+            <span class="file-upload__label"></span>
+          </div>
+            
             <div style='padding-top:60px;'>
             <button class='btn default'>Select check file</button>
             </div>
@@ -58,6 +63,35 @@ Biscuit | App
     }
     
       console.log(detectMob()); 
-     
+      Array.prototype.forEach.call(
+        document.querySelectorAll(".file-upload__button"),
+        function(button) {
+          const hiddenInput = button.parentElement.querySelector(
+            ".file-upload__input"
+          );
+          const label = button.parentElement.querySelector(".file-upload__label");
+          const defaultLabelText = "No file(s) selected";
+      
+          // Set default text for label
+          label.textContent = defaultLabelText;
+          label.title = defaultLabelText;
+      
+          button.addEventListener("click", function() {
+            hiddenInput.click();
+          });
+      
+          hiddenInput.addEventListener("change", function() {
+            const filenameList = Array.prototype.map.call(hiddenInput.files, function(
+              file
+            ) {
+              return file.name;
+            });
+      
+            label.textContent = filenameList.join(", ") || defaultLabelText;
+            label.title = label.textContent;
+          });
+        }
+      );
+      
   </script>
 {% endblock %}

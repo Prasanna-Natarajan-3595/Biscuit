@@ -25,6 +25,44 @@
           .default:hover {
             background: #e7e7e7;
           }
+          .file-upload {
+            display: inline-flex;
+            align-items: center;
+            font-size: 15px;
+          }
+          
+          .file-upload__input {
+            display: none;
+          }
+          
+          .file-upload__button {
+            -webkit-appearance: none;
+            background: white;
+            border: 2px solid #4d4d4d;
+            border-radius: 4px;
+            outline: none;
+            padding: 0.5em 0.8em;
+            margin-right: 15px;
+            color: #4d4d4d;
+            font-size: 1em;
+            font-family: "Quicksand", sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+          }
+          
+          .file-upload__button:active {
+            background: #00745d;
+          }
+          
+          .file-upload__label {
+            max-width: 250px;
+            font-size: 0.95em;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: "Quicksand", sans-serif;
+          }
+          
     </style>
   </head>
   <body style='background-color:#e6e6e6;'>
