@@ -28,6 +28,11 @@ Biscuit | App
               from bigbluebutton<br><div style='padding-top:20px;'></div>
             3.Hit the Compare button<br>
             </h5>
+            
+            <div id='arrow' style='padding-top:30px;padding-left:10px;'>
+
+            </div>
+          
        </div>
       </div>
       <div class="col-sm">
@@ -40,16 +45,14 @@ Biscuit | App
                 <button class='btn default'>Compare</button>
                 </div>
       </div>
-      <div id='arrow'>
-
-      </div>
+     
     </div>
   </div>
   <script>
     var i=0
     function detectMob() {
       if ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1000 ) ) {
-        document.getElementById("arrow").innerHTML='Hello';
+        document.getElementById("arrow").innerHTML="<img src='https://raw.githubusercontent.com/Prasanna-Natarajan-3595/Biscuit/web/web/assets/arrow.png' style='cursor:pointer;'width=60px;height=40px;>";
       }
       return ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1000 ) );
     }
