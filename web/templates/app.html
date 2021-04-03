@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}
+Biscuit | App
+{% endblock %}
+{% block navbar %}
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Features</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Pricing</a>
+    </li>
+  </ul>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+       <div class="rectangle" style='max-width:500px;height:500px;border-radius: 8px;margin-top:30px;text-align:center;'>
+           <h3 style='font-family:consolas;padding-top:50px;color:#4d4d4d;'>How to use:</h3>
+           <h5 style='font-family:consolas;padding-top:50px;color:#4d4d4d;'>1.Hit the select base file<br>
+            to choose your base excel file<br><div style='padding-top:20px;'></div>
+              2.Hit the select check file<br><div style='padding-top:20px;'></div>
+              to choose your file downloaded<br><div style='padding-top:20px;'></div>
+              from bigbluebutton<br><div style='padding-top:20px;'></div>
+            3.Hit the Compare button<br>
+            </h5>
+       </div>
+      </div>
+      <div class="col-sm">
+        <div class="rectangle" style='max-width:500px;height:500px;border-radius: 8px;margin-top:30px;text-align:center;'>
+            <button class='btn default' style='margin-top:60px;'>Select base file</button>
+            <div style='padding-top:60px;'>
+            <button class='btn default'>Select check file</button>
+            </div>
+            <div style='padding-top:60px;'>
+                <button class='btn default'>Compare</button>
+                </div>
+      </div>
+      <div id='arrow'>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    var i=0
+    function detectMob() {
+      if ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1000 ) ) {
+        document.getElementById("arrow").innerHTML='Hello';
+      }
+      return ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1000 ) );
+    }
+    
+      console.log(detectMob()); 
+     
+  </script>
+{% endblock %}
