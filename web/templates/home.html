@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Biscuit | Online attendance helper{% endblock %}
+{% block content %}
+<div style='max-width:auto;height:350px;text-align:center;align-items:center;background-color:white;font-family:monospace;'>
+    <h2 style='padding-top:60px;color: #4d4d4d;' class='arrow1'>An online attendance helper for bigbluebutton</h2>
+    <h5 style='padding-top:30px;color: #4d4d4d;' class='arrow2'>Helps you to find the absentees from the list</h5>
+    <h6 style='padding-top:30px;color: #4d4d4d;'>Made by <a href='https://prasannan.herokuapp.com/' target="_blank">Saturnv</a></h6>
+</div> 
+<div style='font-family:monospace;text-align:center;color:#4d4d4d;max-width:auto;height:50vh;'>
+    <h4 style='padding-top:20px;'>Click the button to</h4>
+    <form action='columnselector' method='POST' enctype = "multipart/form-data">
+        <div class="file-upload" style='padding-top:20px;'>
+            <input class="file-upload__input" type="file" name="basefile" id="basefile" onchange="form.submit()" accept='application/vnd.ms-excel'/>
+            <button class="file-upload__button" type="button">Select base file</button>
+            <span class="file-upload__label" style='padding-left:20px;'></span>
+          </div>
+       
+    </form>
+</div>
+<script>
+    function detectMob() {
+        if ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1000 ) ) {
+          
+          updateHTML('arrow1','An online <br> attendance helper for <br> bigbluebutton');
+          updateHTML('arrow2','Helps you to find the  <br> absentees from the list');
+        }
+        return ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1000 ) );
+      }
+      function updateHTML(elmId, value) {
+        var elem = document.getElementById(elmId);
+        if(typeof elem !== 'undefined' && elem !== null) {
+          elem.innerHTML = value;
+        }
+      }
+      
+    console.log(detectMob());
+</script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Biscuit | Answer{% endblock %}
+{% block content %}
+<div class='container' style='text-align:center;font-family:consolas;'>
+    <div style='padding-top:40px;overflow-y:scroll;'>
+    {% for i in aray %}
+    {{i}}<br>
+    {% endfor %}
+</div>
+    <div style='padding-top:40px;'></div>
+    {{value}}
+    
+    <a href="/return-files/{{value}}" target="blank" ><button class='btn btn-default'>Download</button></a>
+    <div style='padding-top:50px;'>
+        Made by <a href='https://prasannan.herokuapp.com/'>Saturnv</a>
+    </div>
+</div>
+<div style='width:auto;height:fill;background-color:white;'></div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}
+Biscuit | Select check file
+{% endblock%}
+{% block content %}
+<div style='font-family:consolas;text-align:center;'>
+<h4 style='color:#4d4d4d;padding-top:40px;' id='arrow1'>Select the file downloaded from bigbluebutton</h4>
+<form action='finder' method='POST' enctype = "multipart/form-data">
+    <div class="file-upload" style='padding-top:20px;'>
+        <input class="file-upload__input" type="file" name="checkfile" id="checkfile" onchange="form.submit()" accept="text/plain" />
+        <button class="file-upload__button" type="button">Select check file</button>
+        <span class="file-upload__label" style='padding-left:20px;'></span>
+      </div>
+   
+</form>
+</div>
+<div style='background-color:white;height:fill;;width:auto;margin-top:50px;text-align:center;'>
+<h4 style='font-family:consolas;color:#4d4d4d;padding-top:10px;' id='arrow2'>
+    Easy to find attendance in four steps
+</h4>
+<div class="container">
+    <div class="row">
+      <div class="col-sm" style='padding-top:20px;'>
+       <img src='https://raw.githubusercontent.com/Prasanna-Natarajan-3595/Biscuit/web/web/assets/download.jpg' src='' height='250px;' style='border: 5px solid #4d4d4d;border-radius:4px;'>
+       <h4 style='font-family:consolas;color:#4d4d4d;padding-top:20px;'>Download user list from bigbluebutton </h4>
+       
+      </div>
+      <div class="col-sm" style='padding-top:20px;'>
+        <img src='https://raw.githubusercontent.com/Prasanna-Natarajan-3595/Biscuit/web/web/assets/uploadbase.png' src='' height='250px;' style='border: 5px solid #4d4d4d;border-radius:4px;'>
+       <h4 style='font-family:consolas;color:#4d4d4d;padding-top:20px;'>Hit select base file to upload it</h4>
+       
+      </div>
+      <div class="col-sm" style='padding-top:20px;'>
+        <img src='https://raw.githubusercontent.com/Prasanna-Natarajan-3595/Biscuit/web/web/assets/checkfile.png' src='' height='120px;' style='border: 5px solid #4d4d4d;border-radius:4px;'>
+       <h4 style='font-family:consolas;color:#4d4d4d;padding-top:20px;'>Hit select base file to upload it</h4>
+       
+    </div>
+    </div>
+  </div>
+</div>
+<script>
+    function detectMob() {
+        if ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1000 ) ) {
+          
+          updateHTML('arrow1','Select the file downloaded <br> from bigbluebutton');
+          updateHTML('arrow2','Easy to find attendance in <br> four steps ');
+        }
+        return ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1000 ) );
+      }
+      function updateHTML(elmId, value) {
+        var elem = document.getElementById(elmId);
+        if(typeof elem !== 'undefined' && elem !== null) {
+          elem.innerHTML = value;
+        }
+      }
+      
+    console.log(detectMob());
+</script>
+{% endblock %}
