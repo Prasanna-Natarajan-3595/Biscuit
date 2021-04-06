@@ -15,6 +15,12 @@ def home():
     files2 = glob.glob('web/temp/*')
     for f2 in files2:
         os.remove(f2)
+    files3 = glob.glob('web/basefile/*')
+    for f3 in files3:
+        os.remove(f3)
+    files4 = glob.glob('web/checkfile/*')
+    for f4 in files4:
+        os.remove(f4)
     return render_template('home.html')
 
 @view.route('/columnselector', methods=['POST','GET'])
